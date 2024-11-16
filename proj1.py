@@ -1,10 +1,22 @@
 import torch
-from torchvision import datasets
+from torch import nn
+from torch.utils.data import DataLoader
+from torchvision import datasets, transforms
+#from torchvision import datasets
 from torchvision.transforms import ToTensor, Lambda
 
 #torch.utils.data.DataLoader
 
 #torch.utils.data.Dataset
+
+#Device for Training
+device = (
+    "cuda"
+    if torch.cuda.is_available()
+    else "mps"
+    if torch.backends..mps.is_available()
+    else "cpu"
+)
 
 ds = datasets.FashionMNIST(
     root="data",
